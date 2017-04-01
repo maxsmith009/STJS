@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+var n = prompt ('Введите число', "1234");
+    var summa = summaCifr(n);
+
+
+function summaCifr(chislo) {
+
+    if (chislo <10)
+        return chislo;
+
+    else
+        return chislo % 10+summaCifr(Math.floor(chislo/10));
+}
+    alert('Сумма : ' + summa);
+</script>
+</body>
+</html>

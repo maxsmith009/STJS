@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>JS</p>
+<script>
+var name_prov = /^[а-яА-ЯёЁa-zA-Z]+$/;
+    var age_prov = /^[0-9]+$/;
+
+    var prov_nam = function(prov){
+        var name=prompt('Введите имя','Человек');
+        if (prov.test(name)) {
+            return name;
+        }
+            else
+                alert('Неправильный ввод');
+            return prov_nam(prov);
+
+    }
+
+    var prov_age = function(prov){
+        var age=prompt('Введите возраст',20);
+        if (prov.test(age) && age>0 && age<150) {
+            return age;
+        }
+        else
+            alert('Неправильный ввод');
+        return prov_age(prov);
+
+    }
+
+    var name = prov_nam(name_prov);
+    var age = prov_age(age_prov);
+    var dolgi = confirm('Есть долги?');
+
+    alert(name);
+    alert(age);
+    if (dolgi)
+    alert('Есть долги');
+    else
+    alert('Нет долгов');
+</script>
+</body>
+</html>

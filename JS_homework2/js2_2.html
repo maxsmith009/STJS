@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function thirdMin(mass) {
+        var a = Math.max.apply(null, mass)
+        var minMass = [a, a, a];
+        if (mass.length > 2) {
+            for (var i = 0; i < mass.length; i++) {
+                if (mass[i] < minMass[0]) {
+                    minMass[2] = minMass[1];
+                    minMass[1] = minMass[0];
+                    minMass[0] = mass[i];
+                }
+                else if (mass[i] < minMass[1]) {
+                    minMass[2] = minMass[1];
+                    minMass[1] = mass[i];
+                }
+                else if (mass[i] < minMass[2]) {
+                    minMass[2] = mass[i];
+                }
+            }
+        }
+        else {alert("Нет третьего отрицательного"); return ;}
+        return minMass[2];
+    }
+
+    alert(thirdMin([1,2,3,4]));
+
+
+
+</script>
+</body>
+</html>

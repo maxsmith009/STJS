@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<script>
-    function thirdMin(mass) {
+//первый вариант
+function thirdMin(mass) {
         var a = Math.max.apply(null, mass)
         var minMass = [a, a, a];
         if (mass.length > 2) {
@@ -30,9 +23,18 @@
     }
 
     alert(thirdMin([1,2,3,4]));
+    
+    //второй вариант
+    
+    function thirdMin(arr) {
+        var min = Math.min.apply(null, arr)
+            mini = arr.indexOf(min);
+        arr[mini] = +Infinity;
+        min = Math.min.apply(null, arr)
+        mini = arr.indexOf(min);
+        arr[mini] = +Infinity;
+        var thirdmin = Math.min.apply(null, arr);
+        return thirdmin; }
 
 
-
-</script>
-</body>
-</html>
+    alert(thirdMin([1,2,3,4,54,544,546,0,5,45,8,5,4,8,]));

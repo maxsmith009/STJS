@@ -7,8 +7,6 @@ var obj = [2,'sf',{a:9},{},64,235];
 
     var mod = (function Module(){
 
-        
-
         function getKey(key){
 
             return JSON.parse(localStorage.getItem(key));
@@ -16,8 +14,14 @@ var obj = [2,'sf',{a:9},{},64,235];
         }
 
         function getAll(){
-            
-            return localStorage;
+
+            var arr=[];
+
+            for (var key in localStorage) {
+                    var value = localStorage.getItem(key);
+                    arr.push({ key: key, value: value });
+                }
+            return arr;
 
 
         }
@@ -62,6 +66,6 @@ var obj = [2,'sf',{a:9},{},64,235];
         }
 
     })();
-    
+
     mod.add([{'a':7}]);
     mod.getAll();

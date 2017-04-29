@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cars</title>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="scripts.js"></script>
+    <script src="searchBar.js"></script>
+</head>
+<body>
+
+<h2>Продажа машин</h2>
+<input type=button value='Главная' onclick='SwitchToMainPage()'>
+<input type=button value='О нас' onclick='SwitchToAboutPage()'>
+<span id='IPhotosButtons'></span>
+
+<br>
+
+<div  id='IPage'>
+
+</div>
+
+<script>var form=$('#IPage');</script>
+
+<script>
+
+    window.onhashchange=SwitchToStateFromURLHash;
+
+    var SPAStateH={};
+
+    var PhotosH=
+        {
+            1 : { image:"Hilu3.jpg", comment:"собака Шарик" },
+            2 : { image:"Retriever3.jpg", comment:"собака Барбос" }
+        };
+
+
+    function SwitchToStateFromURLHash()
+    {
+        var URLHash=window.location.hash;
+        var StateStr=URLHash.substr(1);
+
+        if ( StateStr!="" )
+        {
+            var PartsA=StateStr.split("_")
+            SPAStateH={ pagename: PartsA[0] };
+            if ( SPAStateH.pagename=='Photo' )
+                SPAStateH.photoid=PartsA[1];
+        }
+        else
+            SPAStateH={pagename:'Main'};
+
+        console.log('Новое состояние приложения:');
+        console.log(SPAStateH);
+
+        var PageHTML="";
+        switch ( SPAStateH.pagename )
+        {
+            case 'Main':
+                form.empty();
+                createSearchBar(form);
+                createCarGrid(form);
+                break;
+            case 'Photo':
+                form.empty();
+                var PhotoH=PhotosH[SPAStateH.photoid];
+                PageHTML+="<h3>Фото</h3>";
+                PageHTML+="<img src='"+PhotoH.image+"'>";
+                PageHTML+="<p><i>"+PhotoH.comment+"</i></p>";
+                break;
+            case 'CarsScreen':
+                form.empty();
+
+                break;
+            case 'About':
+                form.empty();
+
+                break;
+        }
+
+
+    }
+
+    function SwitchToState(NewStateH)
+    {
+        var StateStr=NewStateH.pagename;
+        if ( NewStateH.pagename=='Photo' )
+            StateStr+="_"+NewStateH.photoid;
+        location.hash=StateStr;
+    }
+
+    function SwitchToMainPage()
+    {   SwitchToState( { pagename:'Main' });
+
+    }
+
+    function SwitchToCarsPage(array)
+    {
+        SwitchToState( { pagename:'CarsScreen' } );
+    }
+
+    function SwitchToPhotoPage(PhotoId)
+    {
+        SwitchToState( { pagename:'Photo', photoid:PhotoId } );
+    }
+
+    function SwitchToAboutPage()
+    {
+        SwitchToState( { pagename:'About' } );
+    }
+
+    SwitchToStateFromURLHash();
+
+</script>
+<script>
+    var PhotosStr="";
+    for ( var PhotoId in PhotosH )
+    {
+        var PhotoH=PhotosH[PhotoId];
+        PhotosStr+='<input type=button value="'+PhotoH.comment+'" onclick="SwitchToPhotoPage('+PhotoId+')"> ';
+    }
+    document.getElementById('IPhotosButtons').innerHTML=PhotosStr;
+</script>
+</body>
+</html>

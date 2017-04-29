@@ -1,0 +1,39 @@
+{
+  "cars":[{
+
+  "id":1,
+  "mark":"BMW",
+  "name":"A1",
+  "condition":"с пробегом",
+  "dateOfRelease":"01.01.2000",
+  "mileage":10000,
+  "fuelType":"дизель",
+  "fuelAmmount":"1600",
+  "transmission":"ручная",
+  "clickAmmount":"0"
+},{
+
+  "id":2,
+  "mark":"BMW",
+  "name":"A2",
+  "condition":"новый",
+  "dateOfRelease":"01.01.2001",
+  "mileage":160000,
+  "fuelType":"бензин",
+  "fuelAmmount":"2000",
+  "transmission":"автомат",
+  "clickAmmount":"0"
+},{
+
+  "id":3,
+  "mark":"BMW",
+  "name":"A3",
+  "condition":"аварийный",
+  "dateOfRelease":"01.01.2003",
+  "mileage":200000,
+  "fuelType":"бензин",
+  "fuelAmmount":"2000",
+  "transmission":"ручная",
+  "clickAmmount":"0"
+}]
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>L</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script>
+        var bsulist = document.createElement('div');
+        bsulist.innerHTML = ('<p>Факультет</p>' +
+        '<p><select name="facultyrList" id="faculty"> <option value="fpm">Фпм</option><option value="fiz">Физический</option> </select></p>');
+
+        var bsuirlist = document.createElement('div');
+        bsuirlist.innerHTML = ('<p>Факультет</p>' +
+        '<p><select name="facultyrList" id="faculty"> <option value="fitu">Фиту</option> <option value="ksis">Ксис</option>');
+
+        function insertlist(text) {
+
+            if (text === 'bsu') {
+                document.body.appendChild(bsulist);
+                document.body.removeChild(bsuirlist);
+            } else {
+                document.body.appendChild(bsuirlist);
+                document.body.removeChild(bsulist);
+            }
+        }
+
+
+
+        function printResult() {
+            var surname = document.getElementById('1').value;
+            var name = document.getElementById('2').value;
+            var thirdname = document.getElementById('3').value;
+            var course = document.getElementById('5').value;
+            var univer = document.getElementById('university');
+            var univerVallue = univer.options[univer.selectedIndex].value;
+            var aboutyourself = document.getElementById('7').value;
+            var faculty = document.getElementById('faculty');
+            var facultyVallue = faculty.options[faculty.selectedIndex].value;
+
+            alert('Фамилия: ' + surname + '\nИмя: ' + name + '\nОтчество: ' + thirdname + '\nКурс: ' + course + '\nУниверситет: ' + univerVallue + '\nФакультет: ' + facultyVallue + '\nО себе: ' + aboutyourself);
+        }
+    </script>
+</head>
+
+<body>
+
+<button id="generation" onclick="generate('generation','output')">Показать форму</button>
+<button id="output" onclick="printResult()" style="display : none">Вывести результат</button>
+
+</body>
+
+</html>

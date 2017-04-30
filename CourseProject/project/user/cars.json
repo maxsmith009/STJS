@@ -4,36 +4,438 @@
   "id":1,
   "mark":"BMW",
   "name":"A1",
+    "price":2000,
   "condition":"с пробегом",
-  "dateOfRelease":"01.01.2000",
+  "dateOfRelease":"2000",
   "mileage":10000,
   "fuelType":"дизель",
   "fuelAmmount":"1600",
   "transmission":"ручная",
-  "clickAmmount":"0"
+  "clickAmmount":5,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
 },{
 
   "id":2,
   "mark":"BMW",
   "name":"A2",
+    "price":2000,
   "condition":"новый",
-  "dateOfRelease":"01.01.2001",
+  "dateOfRelease":"2001",
   "mileage":160000,
   "fuelType":"бензин",
   "fuelAmmount":"2000",
   "transmission":"автомат",
-  "clickAmmount":"0"
+  "clickAmmount":23,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
+
 },{
 
   "id":3,
   "mark":"BMW",
   "name":"A3",
+    "price":2000,
   "condition":"аварийный",
-  "dateOfRelease":"01.01.2003",
+  "dateOfRelease":"2003",
   "mileage":200000,
   "fuelType":"бензин",
   "fuelAmmount":"2000",
   "transmission":"ручная",
-  "clickAmmount":"0"
+  "clickAmmount":50,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
+  },{
+
+    "id":4,
+    "mark":"BMW",
+    "name":"A2",
+    "price":2000,
+
+    "condition":"новый",
+    "dateOfRelease":"2001",
+    "mileage":160000,
+    "fuelType":"бензин",
+    "fuelAmmount":"2000",
+    "transmission":"автомат",
+    "clickAmmount":0,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
+  },{
+
+    "id":5,
+    "mark":"BMW",
+    "name":"A2",
+    "price":2000,
+    "condition":"новый",
+    "dateOfRelease":"2001",
+    "mileage":160000,
+    "fuelType":"бензин",
+    "fuelAmmount":"2000",
+    "transmission":"автомат",
+    "clickAmmount":1,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
+  },{
+
+    "id":6,
+    "mark":"BMW",
+    "name":"A2",
+    "price":2000,
+    "condition":"новый",
+    "dateOfRelease":"2001",
+    "mileage":160000,
+    "fuelType":"бензин",
+    "fuelAmmount":"2000",
+    "transmission":"автомат",
+    "clickAmmount":5,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
+  },{
+
+    "id":7,
+    "mark":"BMW",
+    "name":"A2",
+    "price":2000,
+    "condition":"новый",
+    "dateOfRelease":"2001",
+    "mileage":160000,
+    "fuelType":"бензин",
+    "fuelAmmount":"2000",
+    "transmission":"автомат",
+    "clickAmmount":0,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
+  },{
+
+    "id":8,
+    "mark":"BMW",
+    "name":"A2",
+    "price":2000,
+    "condition":"новый",
+    "dateOfRelease":"2001",
+    "mileage":160000,
+    "fuelType":"бензин",
+    "fuelAmmount":"2000",
+    "transmission":"автомат",
+    "clickAmmount":0,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
+  },{
+
+    "id":9,
+    "mark":"BMW",
+    "name":"A2",
+    "price":2000,
+    "condition":"новый",
+    "dateOfRelease":"2001",
+    "mileage":160000,
+    "fuelType":"бензин",
+    "fuelAmmount":"2000",
+    "transmission":"автомат",
+    "clickAmmount":0,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
+  },{
+
+    "id":10,
+    "mark":"BMW",
+    "name":"A2",
+    "price":2000,
+    "condition":"новый",
+    "dateOfRelease":"2001",
+    "mileage":160000,
+    "fuelType":"бензин",
+    "fuelAmmount":"2000",
+    "transmission":"автомат",
+    "clickAmmount":0,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
+  },{
+
+    "id":11,
+    "mark":"BMW",
+    "name":"A2",
+    "price":2000,
+    "condition":"новый",
+    "dateOfRelease":"2001",
+    "mileage":160000,
+    "fuelType":"бензин",
+    "fuelAmmount":"2000",
+    "transmission":"автомат",
+    "clickAmmount":0,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
+  },{
+
+    "id":12,
+    "mark":"BMW",
+    "name":"A2",
+    "price":2000,
+    "condition":"новый",
+    "dateOfRelease":"2001",
+    "mileage":160000,
+    "fuelType":"бензин",
+    "fuelAmmount":"2000",
+    "transmission":"автомат",
+    "clickAmmount":0,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
+
+  },{
+
+    "id":13,
+    "mark":"BMW",
+    "name":"A3",
+    "price":2000,
+    "condition":"аварийный",
+    "dateOfRelease":"2003",
+    "mileage":200000,
+    "fuelType":"бензин",
+    "fuelAmmount":"2000",
+    "transmission":"ручная",
+    "clickAmmount":0,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
+  },{
+
+    "id":14,
+    "mark":"BMW",
+    "name":"A2",
+    "price":2000,
+    "condition":"новый",
+    "dateOfRelease":"2001",
+    "mileage":160000,
+    "fuelType":"бензин",
+    "fuelAmmount":"2000",
+    "transmission":"автомат",
+    "clickAmmount":0,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
+  },{
+
+    "id":15,
+    "mark":"BMW",
+    "name":"A2",
+    "price":2000,
+    "condition":"новый",
+    "dateOfRelease":"2001",
+    "mileage":160000,
+    "fuelType":"бензин",
+    "fuelAmmount":"2000",
+    "transmission":"автомат",
+    "clickAmmount":0,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
+  },{
+
+    "id":16,
+    "mark":"BMW",
+    "name":"A2",
+    "price":2000,
+    "condition":"новый",
+    "dateOfRelease":"2001",
+    "mileage":160000,
+    "fuelType":"бензин",
+    "fuelAmmount":"2000",
+    "transmission":"автомат",
+    "clickAmmount":0,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
+  },{
+
+    "id":17,
+    "mark":"BMW",
+    "name":"A2",
+    "price":2000,
+    "condition":"новый",
+    "dateOfRelease":"2001",
+    "mileage":160000,
+    "fuelType":"бензин",
+    "fuelAmmount":"2000",
+    "transmission":"автомат",
+    "clickAmmount":0,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
+  },{
+
+    "id":18,
+    "mark":"BMW",
+    "name":"A2",
+    "price":2000,
+    "condition":"новый",
+    "dateOfRelease":"2001",
+    "mileage":160000,
+    "fuelType":"бензин",
+    "fuelAmmount":"2000",
+    "transmission":"автомат",
+    "clickAmmount":0,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
+  },{
+
+    "id":19,
+    "mark":"BMW",
+    "name":"A2",
+    "price":2000,
+    "condition":"новый",
+    "dateOfRelease":"2001",
+    "mileage":160000,
+    "fuelType":"бензин",
+    "fuelAmmount":"2000",
+    "transmission":"автомат",
+    "clickAmmount":0,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
+  },{
+
+    "id":20,
+    "mark":"BMW",
+    "name":"A2",
+    "price":2000,
+    "condition":"новый",
+    "dateOfRelease":"2001",
+    "mileage":160000,
+    "fuelType":"бензин",
+    "fuelAmmount":"2000",
+    "transmission":"автомат",
+    "clickAmmount":0,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
+  },{
+
+    "id":21,
+    "mark":"BMW",
+    "name":"A2",
+    "price":2000,
+    "condition":"новый",
+    "dateOfRelease":"2001",
+    "mileage":160000,
+    "fuelType":"бензин",
+    "fuelAmmount":"2000",
+    "transmission":"автомат",
+    "clickAmmount":0,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
+  },{
+
+    "id":22,
+    "mark":"BMW",
+    "name":"A2",
+    "price":2000,
+    "condition":"новый",
+    "dateOfRelease":"2001",
+    "mileage":160000,
+    "fuelType":"бензин",
+    "fuelAmmount":"2000",
+    "transmission":"автомат",
+    "clickAmmount":0,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
+
+  },{
+
+    "id":23,
+    "mark":"BMW",
+    "name":"A3",
+    "price":2000,
+    "condition":"аварийный",
+    "dateOfRelease":"01.01.2003",
+    "mileage":200000,
+    "fuelType":"бензин",
+    "fuelAmmount":"2000",
+    "transmission":"ручная",
+    "clickAmmount":0,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
+  },{
+
+    "id":24,
+    "mark":"BMW",
+    "name":"A2",
+    "price":2000,
+    "condition":"новый",
+    "dateOfRelease":"2001",
+    "mileage":160000,
+    "fuelType":"бензин",
+    "fuelAmmount":"2000",
+    "transmission":"автомат",
+    "clickAmmount":0,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
+  },{
+
+    "id":25,
+    "mark":"BMW",
+    "name":"A2",
+    "price":2000,
+    "condition":"новый",
+    "dateOfRelease":"2001",
+    "mileage":160000,
+    "fuelType":"бензин",
+    "fuelAmmount":"2000",
+    "transmission":"автомат",
+    "clickAmmount":0,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
+  },{
+
+    "id":26,
+    "mark":"BMW",
+    "name":"A2",
+    "price":2000,
+    "condition":"новый",
+    "dateOfRelease":"01.01.2001",
+    "mileage":160000,
+    "fuelType":"бензин",
+    "fuelAmmount":"2000",
+    "transmission":"автомат",
+    "clickAmmount":0,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
+  },{
+
+    "id":27,
+    "mark":"BMW",
+    "name":"A2",
+    "price":2000,
+    "condition":"новый",
+    "dateOfRelease":"2001",
+    "mileage":160000,
+    "fuelType":"бензин",
+    "fuelAmmount":"2000",
+    "transmission":"автомат",
+    "clickAmmount":0,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
+  },{
+
+    "id":28,
+    "mark":"BMW",
+    "name":"A2",
+    "price":2000,
+    "condition":"новый",
+    "dateOfRelease":"2001",
+    "mileage":160000,
+    "fuelType":"бензин",
+    "fuelAmmount":"2000",
+    "transmission":"автомат",
+    "clickAmmount":0,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
+  },{
+
+    "id":29,
+    "mark":"BMW",
+    "name":"A2",
+    "price":2000,
+    "condition":"новый",
+    "dateOfRelease":"2001",
+    "mileage":160000,
+    "fuelType":"бензин",
+    "fuelAmmount":"2000",
+    "transmission":"автомат",
+    "clickAmmount":0,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
+  },{
+
+    "id":30,
+    "mark":"BMW",
+    "name":"A2",
+    "price":2000,
+    "condition":"новый",
+    "dateOfRelease":"2001",
+    "mileage":160000,
+    "fuelType":"бензин",
+    "fuelAmmount":"2000",
+    "transmission":"автомат",
+    "clickAmmount":0,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
+  },{
+
+    "id":31,
+    "mark":"BMW",
+    "name":"A2",
+    "price":2000,
+    "condition":"новый",
+    "dateOfRelease":"2001",
+    "mileage":160000,
+    "fuelType":"бензин",
+    "fuelAmmount":"2000",
+    "transmission":"автомат",
+    "clickAmmount":0,
+    "picture":"http://cdn.mashina.kg:32793/tachka/images//9/a/5/9a57e6007b07681bb14a54ace35d4044_1200x900.jpg"
 }]
 }

@@ -1,23 +1,29 @@
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Cars</title>
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="scripts.js"></script>
-    <script src="searchBar.js"></script>
+    <script src="mainPage.js"></script>
+    <script src="CarView.js"></script>
+
+    <style type="text/css">
+        body{  margin: 70px;}
+
+        table {cursor: pointer}
+        button{cursor: pointer;
+            margin:10px}
+        [type=button]{cursor: pointer}
+    </style>
+
 </head>
 <body>
 
-<h2>Продажа машин</h2>
-<input type=button value='Главная' onclick='SwitchToMainPage()'>
-<input type=button value='О нас' onclick='SwitchToAboutPage()'>
-<span id='IPhotosButtons'></span>
+<h2>ПРОДАЖА МАШИН</h2>
 
-<br>
+<input type=button value='На главную' onclick='SwitchToMainPage()'>
 
-<div  id='IPage'>
+<div  id='IPage' align="center">
 
 </div>
 
@@ -29,13 +35,6 @@
 
     var SPAStateH={};
 
-    var PhotosH=
-        {
-            1 : { image:"Hilu3.jpg", comment:"собака Шарик" },
-            2 : { image:"Retriever3.jpg", comment:"собака Барбос" }
-        };
-
-
     function SwitchToStateFromURLHash()
     {
         var URLHash=window.location.hash;
@@ -43,16 +42,14 @@
 
         if ( StateStr!="" )
         {
-            var PartsA=StateStr.split("_")
+            var PartsA=StateStr.split("/")
             SPAStateH={ pagename: PartsA[0] };
-            if ( SPAStateH.pagename=='Photo' )
-                SPAStateH.photoid=PartsA[1];
+            if ( SPAStateH.pagename=='CarIDScreen' )
+                SPAStateH.carid=PartsA[1];
         }
         else
             SPAStateH={pagename:'Main'};
 
-        console.log('Новое состояние приложения:');
-        console.log(SPAStateH);
 
         var PageHTML="";
         switch ( SPAStateH.pagename )
@@ -73,20 +70,19 @@
                 form.empty();
 
                 break;
-            case 'About':
+            case 'CarIDScreen':
                 form.empty();
-
+                createCarView(SPAStateH.carid);
                 break;
         }
-
 
     }
 
     function SwitchToState(NewStateH)
     {
         var StateStr=NewStateH.pagename;
-        if ( NewStateH.pagename=='Photo' )
-            StateStr+="_"+NewStateH.photoid;
+        if ( NewStateH.pagename=='CarIDScreen' )
+            StateStr+="/"+NewStateH.carid;
         location.hash=StateStr;
     }
 
@@ -97,30 +93,17 @@
 
     function SwitchToCarsPage(array)
     {
-        SwitchToState( { pagename:'CarsScreen' } );
+        SwitchToState( { pagename:'CarsScreen',array:array } );
     }
 
-    function SwitchToPhotoPage(PhotoId)
+    function SwitchToCarIDPage(CarId)
     {
-        SwitchToState( { pagename:'Photo', photoid:PhotoId } );
-    }
-
-    function SwitchToAboutPage()
-    {
-        SwitchToState( { pagename:'About' } );
+        SwitchToState( { pagename:'CarIDScreen',carid:CarId } );
     }
 
     SwitchToStateFromURLHash();
 
 </script>
-<script>
-    var PhotosStr="";
-    for ( var PhotoId in PhotosH )
-    {
-        var PhotoH=PhotosH[PhotoId];
-        PhotosStr+='<input type=button value="'+PhotoH.comment+'" onclick="SwitchToPhotoPage('+PhotoId+')"> ';
-    }
-    document.getElementById('IPhotosButtons').innerHTML=PhotosStr;
-</script>
+
 </body>
 </html>

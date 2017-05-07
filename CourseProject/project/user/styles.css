@@ -1,0 +1,59 @@
+body {
+    margin: 50px;
+    background: rgba(84, 84, 76, 0.33);
+}
+
+table {
+    cursor: pointer;
+    margin: 10px;
+}
+img{
+    border: 2px solid #0a0608;
+}
+button {
+    cursor: pointer;
+    margin: 10px;
+}
+
+[type=button] {
+    cursor: pointer;
+}
+
+p{
+    font-size: x-large;
+    color: #230da5
+}
+
+.block{
+
+    height: 440px;
+    background: rgba(139, 136, 136, 0.31);
+    border: 3px solid #0a0608;
+    border-radius:10px;
+
+}
+.child{
+    margin: 10px
+
+}
+
+#IPage{
+    width: 60%;
+    background: rgb(254, 255, 255);
+    border-radius:10px;
+    margin:auto;
+}
+
+.list{
+    margin: 10px;
+    width: 50%;
+    border-radius:10px;
+    border: 3px solid #0a0608;
+    cursor: pointer;
+}
+
+.filter{
+    width: 30%;
+    background: rgba(162, 163, 163, 0.38);
+    border: 3px solid #0a0608;
+}

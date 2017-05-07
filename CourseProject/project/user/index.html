@@ -1,104 +1,105 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Cars</title>
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="mainPage.js"></script>
-    <script src="CarView.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.js"></script>
+    <script src="main_page.js"></script>
+    <script src="car_view.js"></script>
+    <script src="cars_list.js"></script>
+    <script src="storage.js"></script>
+    <script src="filter_form.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 
-    <style type="text/css">
-        body{  margin: 70px;}
-
-        table {cursor: pointer}
-        button{cursor: pointer;
-            margin:10px}
-        [type=button]{cursor: pointer}
-    </style>
 
 </head>
 <body>
-
 <h2>ПРОДАЖА МАШИН</h2>
 
 <input type=button value='На главную' onclick='SwitchToMainPage()'>
-
-<div  id='IPage' align="center">
-
-</div>
-
-<script>var form=$('#IPage');</script>
+<br>
+<br>
+<div id='IPage' align="center"></div>
 
 <script>
+    var form = $('#IPage');
 
-    window.onhashchange=SwitchToStateFromURLHash;
+    window.onhashchange = SwitchToStateFromURLHash;
 
-    var SPAStateH={};
+    var SPAStateH = {};
 
-    function SwitchToStateFromURLHash()
-    {
-        var URLHash=window.location.hash;
-        var StateStr=URLHash.substr(1);
+    function SwitchToStateFromURLHash() {
+        var URLHash = window.location.hash;
+        var StateStr = URLHash.substr(1);
 
-        if ( StateStr!="" )
-        {
-            var PartsA=StateStr.split("/")
-            SPAStateH={ pagename: PartsA[0] };
-            if ( SPAStateH.pagename=='CarIDScreen' )
-                SPAStateH.carid=PartsA[1];
-        }
+        if (StateStr != "") {
+            var PartsA = StateStr.split(/[/{}]/);
+            SPAStateH = {
+                pagename: PartsA[0]
+            };
+            if (SPAStateH.pagename == 'CarIDScreen')
+                SPAStateH.carid = PartsA[1];
         else
-            SPAStateH={pagename:'Main'};
+            if (SPAStateH.pagename == 'CarsScreen'){
+                SPAStateH.searchtext =PartsA[2];
+        }
+        } else
+            SPAStateH = {
+                pagename: 'Main'
+            };
 
 
-        var PageHTML="";
-        switch ( SPAStateH.pagename )
-        {
+        var PageHTML = "";
+        switch (SPAStateH.pagename) {
             case 'Main':
                 form.empty();
                 createSearchBar(form);
                 createCarGrid(form);
                 break;
-            case 'Photo':
-                form.empty();
-                var PhotoH=PhotosH[SPAStateH.photoid];
-                PageHTML+="<h3>Фото</h3>";
-                PageHTML+="<img src='"+PhotoH.image+"'>";
-                PageHTML+="<p><i>"+PhotoH.comment+"</i></p>";
-                break;
             case 'CarsScreen':
                 form.empty();
+                createSearchBar(form);
+                createCarsList(form,SPAStateH.searchtext);
 
                 break;
             case 'CarIDScreen':
                 form.empty();
-                createCarView(SPAStateH.carid);
+                createCarView(form,SPAStateH.carid);
                 break;
         }
 
     }
 
-    function SwitchToState(NewStateH)
-    {
-        var StateStr=NewStateH.pagename;
-        if ( NewStateH.pagename=='CarIDScreen' )
-            StateStr+="/"+NewStateH.carid;
-        location.hash=StateStr;
+    function SwitchToState(NewStateH) {
+        var StateStr = NewStateH.pagename;
+        if (NewStateH.pagename == 'CarIDScreen')
+            StateStr += "/" + NewStateH.carid;
+        else if (NewStateH.pagename == 'CarsScreen')
+            StateStr += "/text={" + NewStateH.searchtext+"}";
+        location.hash = StateStr;
     }
 
-    function SwitchToMainPage()
-    {   SwitchToState( { pagename:'Main' });
+    function SwitchToMainPage() {
+        SwitchToState({
+            pagename: 'Main'
+        });
 
     }
 
-    function SwitchToCarsPage(array)
-    {
-        SwitchToState( { pagename:'CarsScreen',array:array } );
+    function SwitchToCarsPage(searchtext) {
+        SwitchToState({
+            pagename: 'CarsScreen',
+            searchtext: searchtext
+        });
     }
 
-    function SwitchToCarIDPage(CarId)
-    {
-        SwitchToState( { pagename:'CarIDScreen',carid:CarId } );
+    function SwitchToCarIDPage(CarId) {
+        SwitchToState({
+            pagename: 'CarIDScreen',
+            carid: CarId
+        });
     }
 
     SwitchToStateFromURLHash();
@@ -106,4 +107,5 @@
 </script>
 
 </body>
+
 </html>

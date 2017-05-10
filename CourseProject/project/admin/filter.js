@@ -31,10 +31,13 @@ var createFilter = function(form, cars) {
     filter += "<br>";
     filter += '<button id="filterButton" type="button">Фильтр</button>';
     filter += '</div>';
-    form.append(filter);
+
+    placeForFilter.append(filter);
+
     $('#filterButton').on('click', function() {
         runFilter(cars);
     });
+
     var carCondition = $('#carCondition');
     var fuelType = $('#fuelType');
     var transmission = $('#transmission');
@@ -64,6 +67,7 @@ var runFilter = function(cars) {
     filter.fuelType = $('#fuelType').val();
     filter.fuelAmmount = $('#fuelAmmount').val();
     filter.transmission = $('#transmission').val();
+
     cars.forEach(function(item, i, cars) {
         var isSutible = true;
         if (filter.mark && filter.mark !== cars[i].mark) {
@@ -101,13 +105,17 @@ var runFilter = function(cars) {
         }
     });
 
-    var ul = $('#carList');
-    ul.empty();
+    var table = $('#carsTable');
+    table.empty();
+
+    table.append('<tr><th>Изображение</th><th>ID</th><th>Марка</th><th>Название</th><th>Ценаб, б.р</th><th>Состояние</th>' +
+        '<th>Год выпуска</th><th>Пробег</th><th>Тип топлива</th><th>Объем двигателя</th><th>Коробка передач</th></tr>');
+
     if (newCarList.length) {
         for (i = 0; i < newCarList.length; i++)
-            ul.append(loadCarInfo(newCarList[i]));
+            table.append(carRow(newCarList[i]));
     } else
-        ul.append('<p>Таких автомобилей не найдено</p>')
+        table.append('<p>Таких автомобилей не найдено</p>')
 
 
 };

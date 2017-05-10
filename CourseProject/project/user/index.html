@@ -9,12 +9,12 @@
     <script src="main_page.js"></script>
     <script src="car_view.js"></script>
     <script src="cars_list.js"></script>
-    <script src="storage.js"></script>
     <script src="filter_form.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
 
 
 </head>
+
 <body>
 <h2>ПРОДАЖА МАШИН</h2>
 
@@ -39,12 +39,12 @@
             SPAStateH = {
                 pagename: PartsA[0]
             };
-            if (SPAStateH.pagename == 'CarIDScreen')
+            if (SPAStateH.pagename === 'CarIDScreen')
                 SPAStateH.carid = PartsA[1];
-        else
-            if (SPAStateH.pagename == 'CarsScreen'){
-                SPAStateH.searchtext =PartsA[2];
-        }
+            else
+            if (SPAStateH.pagename === 'CarsScreen') {
+                SPAStateH.searchtext = PartsA[2];
+            }
         } else
             SPAStateH = {
                 pagename: 'Main'
@@ -61,12 +61,12 @@
             case 'CarsScreen':
                 form.empty();
                 createSearchBar(form);
-                createCarsList(form,SPAStateH.searchtext);
+                createCarsList(form, SPAStateH.searchtext);
 
                 break;
             case 'CarIDScreen':
                 form.empty();
-                createCarView(form,SPAStateH.carid);
+                createCarView(form, SPAStateH.carid);
                 break;
         }
 
@@ -74,10 +74,10 @@
 
     function SwitchToState(NewStateH) {
         var StateStr = NewStateH.pagename;
-        if (NewStateH.pagename == 'CarIDScreen')
+        if (NewStateH.pagename === 'CarIDScreen')
             StateStr += "/" + NewStateH.carid;
-        else if (NewStateH.pagename == 'CarsScreen')
-            StateStr += "/text={" + NewStateH.searchtext+"}";
+        else if (NewStateH.pagename === 'CarsScreen')
+            StateStr += "/text={" + NewStateH.searchtext + "}";
         location.hash = StateStr;
     }
 
@@ -103,7 +103,6 @@
     }
 
     SwitchToStateFromURLHash();
-
 </script>
 
 </body>

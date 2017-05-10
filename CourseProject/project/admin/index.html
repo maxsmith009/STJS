@@ -1,17 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Cars</title>
+    <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
+    <script src="add_car_form.js"></script>
+    <script src="car_list.js"></script>
+    <script src="change_car_form.js"></script>
+    <script src="filter.js"></script>
+    <script src="code_for_forms.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
+
 <body>
+<h2>Админка</h2>
 
-<h2>ПРОДАЖА МАШИН АДМИНКА</h2>
+<input type=button value='На главную' onclick='SwitchToMainPage()'>
+<input type=button value='Добавить машину' onclick='SwitchToAddCarScreen()'>
+<br>
+<br>
+<div id='page'></div>
+<div id='placeForFilter'></div>
+<script>
+    var form = $('#page');
+    var placeForFilter = $('#placeForFilter');
 
-<input type=button value='На главную'>
 
+    window.onhashchange = SwitchToStateFromURLHash;
+
+    var SPAStateH = {};
+
+    function SwitchToStateFromURLHash() {
+        var URLHash = window.location.hash;
+        var StateStr = URLHash.substr(1);
+
+        if (StateStr != "") {
+            var PartsA = StateStr.split('/');
+            SPAStateH = {
+                pagename: PartsA[0]
+            };
+            if (SPAStateH.pagename === 'ChangeCarScreen')
+                SPAStateH.carid = PartsA[1];
+        } else
+            SPAStateH = {
+                pagename: 'Main'
+            };
+
+
+        var PageHTML = "";
+        switch (SPAStateH.pagename) {
+            case 'Main':
+                form.empty();
+
+                createCarList(form);
+                break;
+            case 'AddCarScreen':
+                form.empty();
+                addCarForm(form);
+                placeForFilter.empty();
+                break;
+            case 'ChangeCarScreen':
+                form.empty();
+                placeForFilter.empty();
+                changeCarForm(form, SPAStateH.carid);
+                break;
+        }
+
+    }
+
+    function SwitchToState(NewStateH) {
+        var StateStr = NewStateH.pagename;
+        if (NewStateH.pagename == 'ChangeCarScreen')
+            StateStr += "/" + NewStateH.carid;
+        location.hash = StateStr;
+    }
+
+    function SwitchToMainPage() {
+        SwitchToState({
+            pagename: 'Main'
+        });
+
+    }
+
+    function SwitchToAddCarScreen() {
+        SwitchToState({
+            pagename: 'AddCarScreen'
+        });
+    }
+
+    function SwitchToChangeCarScreen(CarId) {
+        SwitchToState({
+            pagename: 'ChangeCarScreen',
+            carid: CarId
+        });
+    }
+
+    SwitchToStateFromURLHash();
+</script>
 
 </body>
+
 </html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cars</title>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="src/admin_add_form.js"></script>
+    <script src="src/admin_car_list.js"></script>
+    <script src="src/admin_change_form.js"></script>
+    <script src="js/kendo.all.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/admin_styles.css">
+    <link href="styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="styles/kendo.rtl.min.css" rel="stylesheet" type="text/css" />
+    <link href="styles/kendo.default.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+<header>
+    <h2><a href="index.html">User</a></h2>
+    <h1><a href="#Main">Cars.by</a></h1>
+</header>
+
+<div id="form"></div>
+
+<script id="carForm" type="text/x-kendo-template">
+    <div align='center' id='formForFilter'>
+        <br><span class='filterSpan'>Марка</span>
+        <br>
+        <input data-role="autocomplete" data-placeholder="Введите марку " data-value-primitive="true" id="mark" data-text-field="mark" data-bind="value: selectedMark,source: marks,events: {change: onMarkChange}" style="width: 80%;" />
+        <br><span class='filterSpan'>Модель</span>
+        <br>
+        <input data-role="autocomplete" data-placeholder="Введите модель " data-cascade-from="mark" data-value-primitive="true" data-text-field="name" data-bind="value: selectedModel,source: models" style="width: 80%;" />
+        <br><span class='filterSpan'>Год выпуска</span>
+        <br>
+        <input id="releaseYear" data-role="numerictextbox" data-min="0" data-bind="value: yearValue" style="width: 80%;" />
+        <br><span class='filterSpan'>Цена</span>
+        <br>
+        <input id="price" data-role="numerictextbox" data-min="0" data-bind="value: priceValue" style="width: 80%;" />
+        <br><span class='filterSpan'>Тип топлива</span>
+        <br>
+        <div>
+            <input type="radio" name="fuelType" id="fueltype1" data-bind="checked: fuelType" class="k-radio" value="дизель">
+            <label class="k-radio-label" for="fueltype1">Дизель</label>
+            <input type="radio" name="fuelType" id="fueltype2" data-bind="checked: fuelType" class="k-radio" value="бензин">
+            <label class="k-radio-label" for="fueltype2">Бензин</label>
+        </div>
+        <br><span class='filterSpan'>Тип коробки</span>
+        <br>
+        <div>
+            <input type="radio" name="transmission" id="transtission1" class="k-radio" data-bind="checked: transmission" value="ручная">
+            <label class="k-radio-label" for="transtission1">Ручная</label>
+            <input type="radio" name="transmission" id="transtission2" class="k-radio" data-bind="checked: transmission" value="автомат">
+            <label class="k-radio-label" for="transtission2">Автомат</label>
+        </div>
+        <br>
+        <br>
+        <span class='filterSpan'>Пробег</span>
+        <br>
+        <input data-role="numerictextbox" data-min="0" data-max="200000" data-bind="value: milleageValue" style="width: 80%;">
+        <br>
+        <br>
+        <span class='filterSpan'>Объем двигателя</span>
+        <br>
+        <input data-role="numerictextbox" data-min="200" data-max="8000" data-bind="value: fuelAmmountValue" style="width: 80%;">
+        <br>
+        <span class='filterSpan'>Фотография</span>
+        <br>
+        <input class="k-textbox" data-bind="value: pictureValue" style="width: 80%;">
+        <br><br>
+        <button data-role="button" style="width: 40%" data-icon="save" data-bind="events: { click: save }">
+            Сохранить
+        </button>
+        <button data-role="button" style="width: 40%" data-icon="cancel" data-bind="events: { click: cancel  }">Отмена
+        </button>
+    </div>
+
+</script>
+
+<script>
+    var form = $('#form');
+
+    var router = new kendo.Router({ routeMissing: function() {  router.navigate("Main") } });
+
+    router.route("(:page)(/:id)", function(page, id) {
+
+        switch (page) {
+            case 'Main':
+                form.empty();
+                createCarList(form);
+                break;
+            case 'AddCarScreen':
+                form.empty();
+                addCarForm(form);
+
+                break;
+            case 'ChangeCarScreen':
+                form.empty();
+                changeCarForm(form, id);
+                break;
+        }
+
+    });
+
+    $(function() {
+        router.start();
+
+    });
+
+    function SwitchToMainPage() {
+        router.navigate("Main")
+    }
+
+    function SwitchToAddCarScreen() {
+        router.navigate("AddCarScreen")
+    }
+
+    function SwitchToChangeCarScreen(CarId) {
+        router.navigate("ChangeCarScreen/" + CarId)
+    }
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,231 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+#root {
+    margin-top: 100px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    z-index: 100;
+    background-color: #04819E;
+    padding: 20px 40px;
+    color: #fff;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.1);
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+header h2 {
+    float: right;
+    opacity: 0.9;
+}
+
+header h3 {
+    float: right;
+    opacity: 0.9;
+    width: 50%;
+    margin-right: 50px;
+}
+
+header h2 a {
+    color: #1d1d1d;
+    font-size: 13px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-block;
+    padding: 12px 18px;
+    border-color: #04819E;
+    background-color: #ffee2f;
+    margin-right: 5px;
+}
+
+.mainScreenGrid {
+    overflow: hidden;
+    border-radius: 10px;
+    float: left;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.4);
+    width: 19.3%;
+    height: 400px;
+    cursor: pointer;
+    margin: 5px;
+    font: bold 110% serif;
+    text-align: center;
+}
+
+.mainScreenGrid:active {
+    transform: translateY(3px);
+}
+
+.gridPicture {
+    width: 100%;
+    height: 300px
+}
+
+.priceField {
+    background-color: #ffee2f;
+}
+
+.carListPrice {
+    float: right;
+    font-size: 25px;
+    background-color: #ffee2f;
+    height: 100%;
+    width: 30%;
+    border-radius: 5px;
+
+}
+
+.list {
+    overflow: hidden;
+    float: left;
+    width: 74%;
+    cursor: pointer;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.4);
+    border: 2px solid #04819E;
+    font-size: 20px;
+}
+
+.picture {
+    float: left
+}
+
+.carImage {
+    float: left;
+}
+
+.carView {
+
+    text-align: center;
+    margin: auto;
+    width: 70%;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.4);
+    margin-top: 100px;
+    font: bold 110% serif;
+    overflow: hidden;
+}
+
+.carViewPicture {
+    border: 1px solid #04819E;
+    width: 700px;
+    height: 500px;
+    float: right;
+}
+
+.carViewPrice {
+    background-color: #ffee2f;
+    margin: auto;
+    display: inline-block;
+}
+
+td {
+    border-top: 1px solid #04819E;
+    font-weight: 300;
+    font-size: 25px;
+}
+
+h1 {
+    color: #04819E;
+}
+
+.idAndViews {
+    font-size: 20px;
+    color: #db2423;
+}
+
+.carVievTable {
+    display: inline-block;
+}
+
+.searchField {
+    margin: auto;
+    text-align: center;
+}
+
+.searchInput {
+    width: 50%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+input{
+    max-width: 100%;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    text-align: left;
+    line-height: 1.21428571em;
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    padding: 0.67857143em 1em;
+    background: #FFFFFF;
+    border: 1px solid rgba(34, 36, 38, 0.15);
+    color: rgba(0, 0, 0, 0.87);
+    border-radius: 0.28571429rem;
+    -webkit-transition: box-shadow 0.1s ease, border-color 0.1s ease;
+    transition: box-shadow 0.1s ease, border-color 0.1s ease;
+    box-shadow: none;
+}
+
+.carListWithFilter {
+    width: 98%;
+    margin: auto;
+}
+
+.MainPage{
+    width: 90%;
+    margin: auto;
+}
+
+.filterForm{
+    font-size: medium;
+    border-radius: 10px;
+    border: 2px solid #04819E;
+    float:right ;
+    width: 24%;
+    background: #ffffff;
+    margin: auto;
+    text-align: center;
+}
+.space{
+    margin-right:50px
+}
+
+.insideFilter{
+    margin:5%
+}
+
+.filterForm span{
+    font-size:large;
+
+}
+
+.AddCarScreen{
+    width: 50%;
+    margin: auto;
+    border: 2px solid #04819E;
+    text-align: center;
+}
+
+.AdminCarListScreen {
+    overflow: hidden;
+    float: left;
+    width: 70%;
+
+
+
+}

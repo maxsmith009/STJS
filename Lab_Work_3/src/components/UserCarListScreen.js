@@ -12,6 +12,10 @@ class CarList extends React.Component {
         store.dispatch(addSearchText(this.props.match.params.searchText));
     }
 
+    componentDidMount() {
+        store.dispatch(addSearchText(this.props.match.params.searchText));
+    }
+
     render() {
         return (
             <div className="carListWithFilter">
